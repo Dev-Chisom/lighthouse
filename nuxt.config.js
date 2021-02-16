@@ -33,10 +33,22 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/pwa',
   ],
+  pwa: {
+    manifest: {
+      name: 'The Light House Africa',
+      short_name: 'TLHA',
+      lang: 'en',
+    },
+    icon: {
+      iconSrc: ""
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/pwa',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

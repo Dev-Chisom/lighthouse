@@ -28,13 +28,60 @@
           <a href="">Facebook</a>
         </li>
         <li class="hero__social">
-          <a href="">TouTube</a>
+          <a href="">YouTube</a>
         </li>
         <li class="hero__social">
           <a href="">Instagram</a>
         </li>
       </ul>
     </header>
+    <!-- About Section -->
+    <section class="about">
+      <div class=" row about__content">
+        <div class="column large-half">
+          <h3 class="subhead">Welcome to Light House Africa</h3>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+          <nuxt-link to="/about" class="btn btn--primary about__btn"
+            >More About TLHA</nuxt-link
+          >
+        </div>
+        <div class="column large-half meduim-full">
+          <ul class="about__program">
+            <li>
+              <h4>Main Church Service</h4>
+              <p>
+                Sunday - 9:00 AM | 12:00 AM <br />
+                Ndokwa Arena Event Center, 148 Itire Bus Stop, Ojo Road.
+                Ajegunle Apapa, Lagos State
+              </p>
+            </li>
+            <li>
+              <h4>Kids Church Service</h4>
+              <p>
+                Sunday - 9:00 AM | 12:00 AM <br />
+                Ndokwa Arena Event Center, 148 Itire Bus Stop, Ojo Road.
+                Ajegunle Apapa, Lagos State
+              </p>
+            </li>
+            <li>
+              <h4>Prayer Meeting</h4>
+              <p>
+                Wednesday - 6:00 PM <br />
+                Ndokwa Arena Event Center, 148 Itire Bus Stop, Ojo Road.
+                Ajegunle Apapa, Lagos State
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -47,136 +94,51 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
+.about {
+  padding-top: 12rem;
+  padding-bottom: 9rem;
+  background-color: #3b0d11;
+  color: rgba(255, 255, 255, 0.8);
 
-.hero {
-  width: 100%;
-  height: 100vh;
-  min-height: 82rem;
-  overflow: hidden;
-  background-color: transparent;
-  position: relative;
-
-  &__parallax {
-    background-image: url("@/assets/images/hero-bg-3000.jpg");
-    min-height: 700px;
-    /* height: 700px; */
-    object-fit: contain;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__center {
+    align-items: center;
   }
-  &__parallax::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #050505;
-    opacity: 0.5;
+  &__center:first-child {
+    padding-right: 2.4vw;
   }
-  &__left {
-    height: 100%;
-    width: 5rem;
-    background-color: #000;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  }
-  &__content {
-    max-width: 1200px;
-    height: 100%;
-    /* padding-top: 20vh; */
-    padding-bottom: 18vh;
-    align-items: flex-end;
-    position: relative;
-    width: 89%;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row wrap;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-  }
-  &__content-text {
-    position: relative;
-    display: flex;
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  &__content-heading {
-    font-weight: 700;
-    font-size: 3.5rem;
-    line-height: 1.263;
-    letter-spacing: 0;
-    color: #ffffff;
-    margin-top: 0;
-    margin-left: 100px;
-    margin-right: 200px;
-    bottom: 3.2rem;
-    /* padding-top: 3.2rem; */
-    position: relative;
-  }
-  &__content-heading::before {
-    display: block;
-    content: "";
-    height: 2px;
-    width: 7rem;
-    background-color: #7d1c24;
-    position: absolute;
-    top: -15px;
-    left: 0.8rem;
-  }
-  &__content-buttons {
-    position: absolute;
-    right: 3rem;
-    bottom: 3.2rem;
-  }
-  &__content-button {
-    display: block;
+  &__content .lead {
+    margin-bottom: 3rem;
     color: #fff;
-    width: 30rem;
+  }
+  &__btn {
+    display: block;
+    width: 100%;
     margin-right: 0;
-    background: transparent;
-    border: 0.2rem solid #fff;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
+    background-color: #21070a;
+    border-color: #21070a;
+  }
+  &__program {
+    list-style: none;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  &__program li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 3.2rem;
+    padding-left: 0;
+  }
+  &__program h4 {
+    font-size: 1.5rem;
+    line-height: 1.333;
+    margin-top: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.6rem;
-    height: 6rem;
-    line-height: 5.6rem;
-    padding: 0 3.2rem;
-    margin: 0 0.4rem 1.6rem 0;
-
-    text-decoration: none;
-    text-align: center;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.4rem;
+    color: #ffffff;
+  }
+  &__program p {
+    font-size: 1rem;
+    line-height: 1.333;
+    margin-top: 0.5rem;
   }
 }
 </style>
